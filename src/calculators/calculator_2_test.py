@@ -13,4 +13,7 @@ def test_calculate():
         })  # type: ignore
 
     calculator_2 = Calculator2
-    calculator_2.calculate(mock_request)
+    formated_response = calculator_2.calculate(mock_request)
+
+    assert isinstance(formated_response, dict)
+    assert formated_response == {'data': {'Calculator': 2, 'result': 0.08}}
